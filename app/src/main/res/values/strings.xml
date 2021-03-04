@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Jenius</string>
+    <string name="debug_mail">abc@mail.com</string>
+    <string name="debug_pass">123456</string>
+
+    <string name="edit_invalid">Periksa kembali isianmu</string>
+    <string name="edit_empty">Masukkan isianmu</string>
+
+    <string name="headers_btpnApiKey">f73eb34d-5bf3-42c5-b76e-271448c2e87d</string>
+</resources>

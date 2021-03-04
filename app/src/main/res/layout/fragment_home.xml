@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.fragment.HomeFragment">
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/lay_refresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            android:scrollbars="none">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:background="@color/primary"
+                    app:layout_constraintBottom_toBottomOf="@id/card_main_btn"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/lay_top"
+                    android:layout_width="match_parent"
+                    android:layout_height="?actionBarSize"
+                    android:gravity="center_vertical"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_profile"
+                        style="@style/Theme.Button.Round.Outlined"
+                        android:layout_marginStart="16dp"
+                        tools:text="IY" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:adjustViewBounds="true"
+                        android:paddingVertical="16dp"
+                        android:src="@drawable/ic_logo_jenius_white" />
+
+                    <com.google.android.material.button.MaterialButton
+                        style="@style/Theme.Button.Round.Borderless"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginEnd="16dp"
+                        android:padding="8dp"
+                        app:icon="@drawable/ic_baseline_notifications_none_24"
+                        app:iconTint="@color/grey_50"
+                        tools:text="IY" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/text_static_saldo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:alpha="0.66"
+                    android:text="Saldo Aktif"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+                    android:textColor="@color/grey_50"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/lay_top" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/text_static_currency"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="4dp"
+                    android:text="Rp"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+                    android:textColor="@color/grey_50"
+                    app:layout_constraintEnd_toStartOf="@id/text_balance"
+                    app:layout_constraintHorizontal_chainStyle="packed"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/text_balance" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/text_balance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+                    android:textColor="@color/grey_50"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/text_static_currency"
+                    app:layout_constraintTop_toBottomOf="@id/text_static_saldo"
+                    tools:text="9.000.000" />
+
+                <com.google.android.material.card.MaterialCardView
+                    style="@style/Theme.Card.RoundTopCorner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    app:layout_constraintTop_toTopOf="@id/card_main_btn">
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="48dp"
+                        android:orientation="vertical">
+
+                        <GridLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="16dp"
+                            android:columnCount="4"
+                            android:rowCount="4">
+
+                            <com.google.android.material.button.MaterialButton
+                                style="@style/Theme.Button.Round.Menu"
+                                app:icon="@drawable/ic_baseline_credit_card_24" />
+
+                            <com.google.android.material.button.MaterialButton
+                                style="@style/Theme.Button.Round.Menu"
+                                app:icon="@drawable/ic_baseline_pie_chart_24" />
+
+                            <com.google.android.material.button.MaterialButton
+                                style="@style/Theme.Button.Round.Menu"
+                                app:icon="@drawable/ic_baseline_account_balance_wallet_24" />
+
+                            <com.google.android.material.button.MaterialButton
+                                style="@style/Theme.Button.Round.Menu"
+                                app:icon="@drawable/ic_baseline_send_24" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                style="@style/Theme.Text.Menu"
+                                android:text="Card Center" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                style="@style/Theme.Text.Menu"
+                                android:text="Split Bill" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                style="@style/Theme.Text.Menu"
+                                android:text="E-Wallet" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                style="@style/Theme.Text.Menu"
+                                android:text="Kirim Uang" />
+
+                            <com.google.android.material.button.MaterialButton
+                                style="@style/Theme.Button.Round.Menu"
+                                app:icon="@drawable/ic_baseline_savings_24" />
+
+                            <com.google.android.material.button.MaterialButton
+                                style="@style/Theme.Button.Round.Menu"
+                                app:icon="@drawable/ic_baseline_volunteer_activism_24" />
+
+                            <com.google.android.material.button.MaterialButton
+                                style="@style/Theme.Button.Round.Menu"
+                                app:icon="@drawable/ic_baseline_receipt_long_24" />
+
+                            <com.google.android.material.button.MaterialButton
+                                style="@style/Theme.Button.Round.Menu"
+                                app:icon="@drawable/ic_baseline_grid_view_24" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                style="@style/Theme.Text.Menu"
+                                android:text="Flexi Saver" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                style="@style/Theme.Text.Menu"
+                                android:text="Pay Me" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                style="@style/Theme.Text.Menu"
+                                android:text="Pay Bill" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                style="@style/Theme.Text.Menu"
+                                android:text="Lainnya" />
+                        </GridLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="8dp"
+                            android:layout_marginTop="32dp"
+                            android:background="@color/grey_200" />
+
+                        <com.google.android.material.button.MaterialButton
+                            style="@style/Widget.AppCompat.Button.Borderless"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="start|center_vertical"
+                            android:text="In &amp; Out"
+                            android:textAllCaps="false"
+                            android:textColor="@color/grey_700"
+                            app:icon="@drawable/ic_baseline_chevron_right_24"
+                            app:iconGravity="end"
+                            app:iconTint="@color/grey_700" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/grey_200" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rv_inout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:nestedScrollingEnabled="false"
+                            tools:visibility="gone" />
+
+                        <ProgressBar
+                            android:id="@+id/progress_inout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:indeterminateTint="@color/primary"
+                            android:padding="24dp" />
+
+                        <TextView
+                            android:id="@+id/text_static_list_empty"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:alpha="0.5"
+                            android:gravity="center"
+                            android:padding="24dp"
+                            android:text="Tidak ada transaksi"
+                            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                            android:visibility="gone" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card_main_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginTop="48dp"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="4dp"
+                    app:layout_constraintTop_toBottomOf="@id/text_balance">
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <com.google.android.material.button.MaterialButton
+                            style="@style/Widget.AppCompat.Button.Borderless"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:paddingHorizontal="0dp"
+                            android:text="In &amp; Out"
+                            android:textAllCaps="false"
+                            android:textAppearance="@style/TextAppearance.MaterialComponents.Button"
+                            android:textColor="@color/grey_500"
+                            app:icon="@drawable/ic_baseline_history_24"
+                            app:iconGravity="top"
+                            app:iconSize="32dp"
+                            app:iconTint="@color/primary" />
+
+                        <com.google.android.material.button.MaterialButton
+                            style="@style/Widget.AppCompat.Button.Borderless"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:paddingHorizontal="0dp"
+                            android:text="Pindah Saldo"
+                            android:textAllCaps="false"
+                            android:textAppearance="@style/TextAppearance.MaterialComponents.Button"
+                            android:textColor="@color/grey_500"
+                            app:icon="@drawable/ic_baseline_sync_alt_24"
+                            app:iconGravity="top"
+                            app:iconSize="32dp"
+                            app:iconTint="@color/primary" />
+
+                        <com.google.android.material.button.MaterialButton
+                            style="@style/Widget.AppCompat.Button.Borderless"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:paddingHorizontal="0dp"
+                            android:text="Transfer"
+                            android:textAllCaps="false"
+                            android:textAppearance="@style/TextAppearance.MaterialComponents.Button"
+                            android:textColor="@color/grey_500"
+                            app:icon="@drawable/ic_baseline_reply_24"
+                            app:iconGravity="top"
+                            app:iconSize="32dp"
+                            app:iconTint="@color/primary" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+                </com.google.android.material.card.MaterialCardView>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
